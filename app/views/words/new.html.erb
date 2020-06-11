@@ -1,2 +1,20 @@
-<h1>Words#new</h1>
-<p>Find me in app/views/words/new.html.erb</p>
+<h1>Let's learn a new word</h1>
+<p>Create a new word</p>
+
+<%= form_with scope: :word, url: words_create_path, local: true do |form| %>
+	<p>
+		<%= form.label :word %>	
+		<%= form.text_field :word %>
+	</p>
+	<p>
+		<%= form.label :translation %>	
+		<%= form.text_field :translation %>
+	</p>
+	<p>
+		<%= form.label :association %>	
+		<%= form.text_area :association %>
+	</p>
+	<p>
+		<%= form.submit %>
+	</p>
+<% end %>
