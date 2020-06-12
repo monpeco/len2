@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  original: MyString
+  origin: MyString
+  translation: MyString
+  destination: MyString
+  pronunciation: MyString
+  hint: MyText
+
+two:
+  original: MyString
+  origin: MyString
+  translation: MyString
+  destination: MyString
+  pronunciation: MyString
+  hint: MyText

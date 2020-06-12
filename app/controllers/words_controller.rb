@@ -3,13 +3,13 @@ class WordsController < ApplicationController
   end
 	
   def create
-    @word = word_params
-    puts @word
+    @word = Word.new(word_params)
+    @word.save
     redirect_to home_index_path
   end
 
   private
     def word_params
-      params.require(:word).permit(:word, :pronunciation, :translation, :association)
+      params.require(:word).permit(:origin, :destination, :original, :pronunciation, :translation, :hint)
     end
 end
