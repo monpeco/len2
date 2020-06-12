@@ -8,6 +8,10 @@ class WordsController < ApplicationController
     redirect_to home_index_path
   end
 
+  def index
+    @words = Word.all
+  end
+  
   private
     def word_params
       params.require(:word).permit(:origin, :destination, :original, :pronunciation, :translation, :hint)
