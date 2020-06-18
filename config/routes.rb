@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'home/login'
   get 'home/index'
   get 'words/new'
   post 'words/create'
