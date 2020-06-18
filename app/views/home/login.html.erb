@@ -6,11 +6,30 @@
       <h2>Sign in to Len2</h2>
     </div>
 </div>
+<div>
+  <% if flash[:error] %>
+    <%= flash[:error] %>
+	<% flash.discard %>
+  <% end %>
+</div>
 <div class='body'>
-  <h1>Email address</h1>
-  <input type="text" id="email" name="email">
-  <h1>Password</h1>
-  <input type="text" id="password" name="password">
+  <%= form_with scope: :user, url: home_signin_path, local: true do |form| %>
+<div>
+  <%= form.label 'Email address' %>
+</div>
+<div>
+  <%= form.text_field 'Email address' %>
+</div>
+<div>
+    <%= form.label :password %>
+</div>
+<div>
+    <%= form.text_field :password %>
+</div>
+<div>
+    <%= form.submit 'Sign in' %>
+</div>
+  <% end %>
 </div>
 <div class='footer'>
 </div>

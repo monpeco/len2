@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'home/login'
+  post 'home/signin'
+  get 'home/signin'  # in case of reload
   get 'home/index'
   get 'words/new'
   post 'words/create'
