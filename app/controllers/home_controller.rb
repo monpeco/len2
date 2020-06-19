@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_action :require_login, except: [:login, :signin]
+  #before_action :require_login, except: [:login, :signin]
 	
   def login
     flash.keep
