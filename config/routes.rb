@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'home#login'
   get 'home/login'
   post 'home/signin'
   get 'home/signin'  # in case of reload
