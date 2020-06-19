@@ -35,9 +35,6 @@ class HomeController < ApplicationController
 private
 
   def require_login
-    puts '@loged_in'
-    puts session[:loged_in]
-    puts '@loged_in'
     unless session[:loged_in]
       redirect_to action: :login
     end
