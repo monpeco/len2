@@ -48,6 +48,6 @@ private
   end
   
   def word_params
-    params.require(:word).permit(:origin, :destination, :original, :pronunciation, :translation, :hint)
+    params.require(:word).permit(:origin, :destination, :original, :translation, :pronunciation, :hint)
   end
 end
