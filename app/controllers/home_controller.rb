@@ -1,8 +1,5 @@
 class HomeController < ApplicationController
   before_action :require_login, except: [:login, :signin]
-
-  def index
-  end
 	
   def login
     flash.keep
@@ -10,24 +7,47 @@ class HomeController < ApplicationController
 
   def signin
     if authenticate_user
-      @loged_in = true
-      render :index
+      session[:loged_in] = true
+      render :feed
     else 
       flash[:error] = 'Authentication failed'
-      @loged_in = false
+      session[loged_in] = false
       render :login
     end
   end
 
+  def feed
+  end
+  
+  def new
+  end
+	
+  def create
+    @word = Word.new(word_params)
+    @word.save
+    redirect_to home_feed_path
+  end
+  
+  def review
+    @words = Word.all
+  end
+  
 private
 
   def require_login
-    unless @loged_in
+    puts '@loged_in'
+    puts session[:loged_in]
+    puts '@loged_in'
+    unless session[:loged_in]
       redirect_to action: :login
     end
   end
 
   def authenticate_user
     params[:user] && params[:user]['Email address'] == 'okok' && params[:user] && params[:user][:password] == 'mkmk'
+  end
+  
+  def word_params
+    params.require(:word).permit(:origin, :destination, :original, :pronunciation, :translation, :hint)
   end
 end

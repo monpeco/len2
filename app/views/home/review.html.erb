@@ -1,0 +1,25 @@
+<h1>Review your words</h1>
+  <section>
+    <% @words.each do |word| %>
+      <div>
+        <div class='row item'> 
+          <span><%= word.original %></span>
+        </div>
+	<div class='row info flex-container'>
+	    <div class='translation'>
+              <div>Translation:</div>
+              <div><%= word.translation %></div>
+	    </div>
+            <div class='pronunciation'>
+              <div>Pronunciation:</div>
+	      <span><%= word.pronunciation %></span>
+	    </div>
+            <div class='hint'>	
+              <div>Hint:</div>	    
+              <span><%= word.hint %></span>
+	    </div>
+	</div>
+      </div>
+    <% end %>
+  </section>
+<%= link_to 'Return to home' , home_feed_path %>

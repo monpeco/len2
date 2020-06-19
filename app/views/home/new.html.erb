@@ -1,0 +1,24 @@
+<h1>Let's learn a new word</h1>
+<p>Create a new word</p>
+
+<%= form_with scope: :word, url: home_create_path, local: true do |form| %>
+	<p>
+		<%= form.label :word %>	
+		<%= form.text_field :word %>
+	</p>
+	<p>
+		<%= form.label :translation %>	
+		<%= form.text_field :translation %>
+	</p>
+	<p>
+		<%= form.label :pronunciation %>	
+		<%= form.text_field :pronunciation %>
+	</p>
+	<p>
+		<%= form.label :hint %>	
+		<%= form.text_area :hint %>
+	</p>
+	<p>
+		<%= form.submit %>
+	</p>
+<% end %>
