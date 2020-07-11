@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   post 'home/create'
   get 'home/review'
   get 'home/review_german'
+  get 'home/review_dutch'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

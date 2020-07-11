@@ -38,6 +38,10 @@ class HomeController < ApplicationController
     @words = Word.where(origin: :german)
   end
   
+  def review_dutch
+    @words = Word.where(origin: :dutch)
+  end
+  
 private
 
   def require_login
