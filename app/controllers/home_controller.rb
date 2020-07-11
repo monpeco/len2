@@ -20,16 +20,22 @@ class HomeController < ApplicationController
   end
   
   def new
+    session[:lenguage] = params[:lenguage]
   end
 	
   def create
     @word = Word.new(word_params)
+    @word.origin = session[:lenguage] if session[:lenguage]
     @word.save
     redirect_to home_feed_path
   end
   
   def review
     @words = Word.all
+  end
+  
+  def review_german
+    @words = Word.where(origin: :german)
   end
   
 private
